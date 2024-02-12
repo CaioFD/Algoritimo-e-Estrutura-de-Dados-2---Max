@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
-/* 
+ 
      class Lab01Q2 {
     public static int ContMaius (String palavra){
       
@@ -31,4 +31,3 @@ import java.io.BufferedWriter;
     }
 }
 
-*/
