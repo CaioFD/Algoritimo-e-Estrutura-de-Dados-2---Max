@@ -1,45 +1,33 @@
-
-
-
-
-/* 
 package LAB1;
-class  Lab01Q1 {
-    public static boolean isMaiuscula (char c){
-       return (c >= 'A' && c <= 'Z');
+
+
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+
+
+     class Lab01Q2 {
+    public static int ContMaius (String palavra){
+      
     }
- 
-    public static boolean isFim(String s){
-       return (s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M');
+
+    public static void main(String[] args) throws IOException{
+        String p = "";
+        BufferedReader pubin = new BufferedReader(new FileReader("pub.in.txt"));
+        BufferedWriter pubout = new BufferedWriter(new FileWriter("pub.out.txt"));
+
+        while ((p = pubin.readLine()) != null) {
+            int num = ContMaius(p,0,0);
+
+            if (!p.equals("FIM")) {
+                System.out.println(num);
+                pubout.append(num+ "\n");
+            }
+        }
+        pubin.close();
+        pubout.close();
     }
- 
-    
-    public static int contarLetrasMaiusculas (String s, int pos){
-       int resp = 0; 
-       if(pos < s.length()){
-          if(isMaiuscula(s.charAt(pos)) == true){
-             resp = 1 + contarLetrasMaiusculas (s, pos + 1);
-          } else {
-             resp = contarLetrasMaiusculas (s, pos + 1);
-          }
-       }
-       return resp;
-    }
- 
-    public static void main (String[] args){
-       String[] entrada = new String[1000];
-       int numEntrada = 0;
- 
-       //Leitura da entrada padrao
-       do {
-          entrada[numEntrada] = MyIO.readLine();
-       } while (isFim(entrada[numEntrada++]) == false);
-       numEntrada--;   //Desconsiderar ultima linha contendo a palavra FIM
- 
-       //Para cada linha de entrada, gerando uma de saida contendo o numero de letras maiusculas da entrada
-       for(int i = 0; i < numEntrada; i++){
-          MyIO.println(contarLetrasMaiusculas(entrada[i],0));
-       }
-    }
- }
- */
+}
+
