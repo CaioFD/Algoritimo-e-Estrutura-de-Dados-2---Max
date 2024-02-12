@@ -3,40 +3,49 @@
 #include <string.h>
 #include <ctype.h>
 
+#define MAX_LENGTH 100
+
 typedef char* String;
 
-int maiusculo(String palavra){
+int maiusculo(String palavra) {
     int num = 0;
-    for (int x=0; x < strlen(palavra); x++){
-        if(isupper(palavra[x])){
+    for (int x = 0; x< strlen(palavra); x++) {
+        if (isupper(palavra[x])) {
             num++;
         }
     }
     return num;
 }
 
-int main(){
-    String p = (String)malloc(sizeof(char) * 100);
-    FILE* arq = fopen("pub.in.txt", "r");
-    FILE* arqout = fopen("pub.out.txt", "w");
-    if (arq == NULL) {
-        printf("Erro ao abrir o arquivo\n");
+int main() {
+    String p = (String)malloc(sizeof(char) * MAX_LENGTH);
+    if (p == NULL) {
+        printf("Erro de alocação de memória\n");
         return 1;
     }
-    fseek(arq, 0, SEEK_SET);
-    while(strcmp(p, "FIM") != 0){
-        fscanf(arq, "%[^\n]", p);
-        fgetc(arq);
+
+    FILE* arq = fopen("pub.in.txt", "r");
+    FILE* arqout = fopen("pub.out.txt", "w");
+    if (arq == NULL || arqout == NULL) {
+        printf("Erro ao abrir os arquivos\n");
+        free(p);
+        return 1;
+    }
+
+    while (fgets(p, MAX_LENGTH, arq) != NULL) {
+        p[strcspn(p, "\n")] = '\0';
+
+        if (strcmp(p, "FIM") == 0) {
+            break;
+        }
 
         int num = maiusculo(p);
-
-
-        if (strcmp(p, "FIM") != 0){
-            printf("%d\n", num);
-            fprintf(arqout, "%d\n", num);
-        }
+        printf("%d\n", num);
+        fprintf(arqout, "%d\n", num);
     }
+
     fclose(arq);
+    fclose(arqout);
     free(p);
     return 0;
 }
