@@ -1,12 +1,6 @@
 
 
 
-class Lab01Q1{
-    
-}
-
-
-
 
 /* 
 package LAB1;
