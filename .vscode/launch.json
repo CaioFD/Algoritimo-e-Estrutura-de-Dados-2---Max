@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Lab01Q1",
+      "request": "launch",
+      "mainClass": "LAB1.Lab01Q1",
+      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",

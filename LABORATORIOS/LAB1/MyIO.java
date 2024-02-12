@@ -1,3 +1,4 @@
+package LAB1;
 import java.io.*;
 import java.nio.charset.*;
 
