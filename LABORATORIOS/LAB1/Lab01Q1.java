@@ -10,7 +10,13 @@ import java.io.BufferedWriter;
  
      class Lab01Q2 {
     public static int ContMaius (String palavra){
-      
+        int x, num = 0;
+        for(x = 0; x<= palavra.length()-1; x++){
+            if (Character.isUpperCase(palavra.charAt(x)) == true) {
+                num++;
+            }
+        }
+        return num;
     }
 
     public static void main(String[] args) throws IOException{
@@ -19,7 +25,7 @@ import java.io.BufferedWriter;
         BufferedWriter pubout = new BufferedWriter(new FileWriter("pub.out.txt"));
 
         while ((p = pubin.readLine()) != null) {
-            int num = ContMaius(p,0,0);
+            int num = ContMaius(p);
 
             if (!p.equals("FIM")) {
                 System.out.println(num);
