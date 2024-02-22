@@ -20,7 +20,7 @@ public class Lab02Q2 {
             for (int i = inicio; i <= fim; i++) {
                 System.out.print(i + " ");
             }
-            for (int i = fim ; i >= inicio; i--) {
+            for (int i = fim  ; i >= inicio; i--) {
                 System.out.print(i + " ");
             }
         } else {
