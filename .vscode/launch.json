@@ -2,62 +2,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "java",
-      "name": "Q3",
-      "request": "launch",
-      "mainClass": "TPs.TP01.Q3",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
-      "type": "java",
-      "name": "Q1",
-      "request": "launch",
-      "mainClass": "TPs.TP01.Q1",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
-      "type": "java",
-      "name": "Lab02Q2",
-      "request": "launch",
-      "mainClass": "Lab02Q2",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
-      "type": "java",
-      "name": "Lab02Q1",
-      "request": "launch",
-      "mainClass": "Lab02Q1",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
-      "type": "java",
-      "name": "Lab01Q1",
-      "request": "launch",
-      "mainClass": "Lab01Q1",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
-      "type": "java",
-      "name": "LAB01Q1",
-      "request": "launch",
-      "mainClass": "LAB01Q1",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
-      "type": "java",
-      "name": "Lab01Q2",
-      "request": "launch",
-      "mainClass": "LAB1.Lab01Q2",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
-      "type": "java",
-      "name": "Lab01Q1",
-      "request": "launch",
-      "mainClass": "LAB1.Lab01Q1",
-      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
-    },
-    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
