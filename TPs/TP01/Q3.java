@@ -7,11 +7,11 @@ public class Q3 {
     } // end isfim
 
     public static String JC(String pala) {
-        String temp = "";
+        String temporaria = "";
         for (int i = 0; i < pala.length(); i++) {
-            temp += (char) ((int) pala.charAt(i) + 3);
+            temporaria += (char) ((int) pala.charAt(i) + 3);
         }
-        return temp;
+        return temporaria;
     } // end cifrar
 
     public static void main(String[] args) {
