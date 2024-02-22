@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Q3",
+      "request": "launch",
+      "mainClass": "TPs.TP01.Q3",
+      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
+    },
+    {
+      "type": "java",
       "name": "Q1",
       "request": "launch",
       "mainClass": "TPs.TP01.Q1",
