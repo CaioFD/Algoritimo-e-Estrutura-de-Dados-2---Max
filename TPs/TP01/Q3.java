@@ -12,7 +12,7 @@ public class Q3 {
             temporaria += (char) ((int) pala.charAt(i) + 3);
         }
         return temporaria;
-    } // end cifrar
+    } // end cifra
 
     public static void main(String[] args) {
 
@@ -21,8 +21,10 @@ public class Q3 {
         do {
 
             palavra = MyIO.readLine();
-            palavra = JC(palavra);
-            System.out.println(palavra);
+            
+           // palavra = JC(palavra);
+            MyIO.println(JC(palavra));
+          //  System.out.println(palavra);
         
         } while ( !isFim( palavra ) );
     } // end main
