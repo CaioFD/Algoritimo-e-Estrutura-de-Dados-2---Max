@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "teste",
+      "request": "launch",
+      "mainClass": "teste",
+      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
+    },
+    {
+      "type": "java",
       "name": "Q3",
       "request": "launch",
       "mainClass": "Q3",

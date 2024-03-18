@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,7 +30,7 @@ int main() {
       break;
     }
 
-    srand(time(NULL));
+    //srand(time(NULL));
     primeiraLetra = (char)(rand() % (122 - 97 + 1) + 97);
     segundaLetra = (char)(rand() % (122 - 97 + 1) + 97);
 
@@ -39,3 +40,5 @@ int main() {
 
   return 0;
 }
+
+
