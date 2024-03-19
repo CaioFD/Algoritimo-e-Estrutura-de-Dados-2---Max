@@ -1,40 +1,80 @@
+
 import java.io.RandomAccessFile;
-import java.io.IOException;
-import java.util.Scanner;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-class Q8 {
-static public void main (String args[]){
-	try{
-	Scanner ler = new Scanner(System.in);
-	RandomAccessFile arqw = new RandomAccessFile("arq.txt", "rw");
-	
-	int num = ler.nextInt();
-	ler.nextLine();
-	for(int i=0; i<num; i++){
-		String strf = ler.next();
-		float numf = Float.parseFloat(strf);
-	    arqw.writeFloat(numf);
-	}
-	arqw.close();
-	RandomAccessFile arqr = new RandomAccessFile("arq.txt", "r");
-	
-	long tam = arqr.length();
-	arqr.seek(tam-4); //move o ponteiro para o final do conteudo do arquivo
-	
-	while (tam>=4){
-		float resp = arqr.readFloat();
-		MyIO.println(resp);
-		tam -= 4; //tamanho do float=4 bytes
-		if(tam>=4){
-		arqr.seek(tam-4);
-		}
-	}
-	arqr.close();
-	} catch (IOException erro){
-		erro.printStackTrace();
-	}
-}
 
+public class Q8
+{
+    
+    private static int n = 0;
 
-}
+    /**
+     *  Funcao principal
+     *  @param args
+     */
+    public static void main ( String[] args )
+    {
+        MyIO.setCharset("UTF-8");
+        double input = 0.0;
+        String filename = "ARQUIVO.TXT";
+
+        n = MyIO.readInt();
+
+        for( int x = 0; x < n; x = x + 1 )
+        {
+            input = MyIO.readDouble();
+            writeDoubleToFile(input, filename);
+        } // end for
+
+        readDoubleFromFile( filename );
+    } // end main ( )
+
+    /**
+     *  Funcao para escrever numero real no arquivo.
+     *  @param input - Double: Numero real a ser escrito no arquivo.
+     *  @param filename - String: Nome do arquivo.
+     */
+    public static void writeDoubleToFile( double input, String filename )
+    {
+        try 
+        {
+            RandomAccessFile file = new RandomAccessFile( filename, "rw" );
+            file.seek( file.length() );
+            file.writeDouble( input );
+            file.close();
+        } 
+        catch( Exception e )
+        {
+            MyIO.println( "ERRO: " + e.getMessage() );
+        } // end try catch
+    } // end writeDoubleToFile ( )
+
+    /**
+     *  Funcao para ler numero real do arquivo e mostrar na tela.
+     *  @param filename - String: Nome do Arquivo.
+     */
+    public static void readDoubleFromFile( String filename )
+    {
+        double value = 0.0;
+        try 
+        {
+            RandomAccessFile file = new RandomAccessFile( filename, "r" );
+            for( int pointer = (int)file.length()-8; pointer >= 0; pointer = pointer - 8 )
+            {
+                file.seek(pointer);
+                value = file.readDouble();
+                if( value - (int)value == 0 )
+                {  
+                    MyIO.println( (int)value );
+                }
+                else{
+                    MyIO.println( value );
+                } // end if
+            } // end for
+            file.close();
+        } 
+        catch( Exception e )
+        {
+            MyIO.println( "ERRO: " + e.getMessage() );
+        } // end try catch
+    } // end readDoubleToFile ( )
+
+} // end class
