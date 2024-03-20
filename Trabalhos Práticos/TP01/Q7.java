@@ -3,7 +3,7 @@ import java.net.*;
 
 public class Q7 {
   public static String obterHtmlml(String endereco) {
-    URL url;
+    //URL url;
     InputStream is = null;
     BufferedReader br;
     String resp = "", line;

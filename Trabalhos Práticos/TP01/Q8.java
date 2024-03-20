@@ -68,3 +68,29 @@ public class Q8
 */
 
 
+
+import java.io.RandomAccessFile;
+public class Q8{
+    public static void main (String[] args) throws Exception{
+        int n = MyIO.readInt();
+            RandomAccessFile saida = new RandomAccessFile("saida.txt", "rw");
+                for(int x = 0; x < n; x++){
+                double valor = MyIO.readDouble();
+                saida.writeDouble(valor);
+        }
+            int length = (int) saida.getFilePointer();
+            saida.close();
+
+            saida = new RandomAccessFile("saida.txt", "r");
+        
+        for(int x = 8; x < length; x+=8){
+            saida.seek(length-x);
+            double aux = saida.readDouble();
+                if(aux%1 == 0){
+                MyIO.println((int) aux);
+            }
+            else
+                MyIO.println(aux);
+            }
+        }
+}
