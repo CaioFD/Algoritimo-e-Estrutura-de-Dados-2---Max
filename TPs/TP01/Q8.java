@@ -1,15 +1,11 @@
 
-import java.io.RandomAccessFile;
+/* import java.io.RandomAccessFile;
 
 public class Q8
 {
     
     private static int n = 0;
 
-    /**
-     *  Funcao principal
-     *  @param args
-     */
     public static void main ( String[] args )
     {
         MyIO.setCharset("UTF-8");
@@ -27,11 +23,6 @@ public class Q8
         readDoubleFromFile( filename );
     } // end main ( )
 
-    /**
-     *  Funcao para escrever numero real no arquivo.
-     *  @param input - Double: Numero real a ser escrito no arquivo.
-     *  @param filename - String: Nome do arquivo.
-     */
     public static void writeDoubleToFile( double input, String filename )
     {
         try 
@@ -47,10 +38,6 @@ public class Q8
         } // end try catch
     } // end writeDoubleToFile ( )
 
-    /**
-     *  Funcao para ler numero real do arquivo e mostrar na tela.
-     *  @param filename - String: Nome do Arquivo.
-     */
     public static void readDoubleFromFile( String filename )
     {
         double value = 0.0;
@@ -77,4 +64,7 @@ public class Q8
         } // end try catch
     } // end readDoubleToFile ( )
 
-} // end class
+} 
+*/
+
+

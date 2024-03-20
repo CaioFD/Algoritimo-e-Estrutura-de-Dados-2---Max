@@ -13,8 +13,7 @@ public static boolean isPalindromo(String palavra){
             return false;
 	
         }
-		return isPalindromo(palavra.substring( 1, tam-1)); //pega o restante menos o 1 e o ultimo numeros (a palavra restante do meio)
- 
+		return isPalindromo(palavra.substring( 1, tam-1)); 
 }
 public static void main(String args[]){
 	String palavra = MyIO.readLine();
@@ -28,7 +27,6 @@ public static void main(String args[]){
         System.out.println("SIM");
     }
 	palavra = MyIO.readLine();
-  	    
 	}
 }
 
