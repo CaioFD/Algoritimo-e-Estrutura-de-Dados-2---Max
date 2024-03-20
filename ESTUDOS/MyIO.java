@@ -252,23 +252,23 @@ class MyIO {
    }
 }
 
+// INSERÇAO
+   private static void InsertionSort( String[] array ){
 
- // função de ordenar INSERÇAO
-
-   private static void InsertionSort( String[] array ) {
-      for( int x = 1; x < array.length; x++ ) {
-         String temp = array[x];
-         int y = x - 1;
-         while( (y >= 0) && (array[x].compareTo(temp) > 0) ) {
-            array[y + 1] = array[y];
-            y--;
-         } 
-         array[y + 1] = temp;
+   for( int x = 1; x < array.length; x++ ) 
+   {
+      String temp = array[x];
+      int y = x - 1;
+      while( (y >= 0) && (array[x].compareTo(temp) > 0) )
+      {
+         array[y + 1] = array[y];
+         y--;
       } 
+      array[y + 1] = temp;
    } 
+} 
 
-
- // função de ordenar SELEÇÃO
+// função de ordenar SELEÇÃO
    private static void SelectionSort( String[] array )
    {
       for(int i = 0; i<(n-1); i++){
@@ -281,15 +281,15 @@ class MyIO {
          swap(array, menor, i);
       }
    }
-            // SWAP
+
+// SWAP
    public static void swap(int[] arr, int i, int j) {
       int temp = arr[i];
       arr[i] = arr[j];
       arr[j] = temp;
    }
 
-
- // função de ordenar BUBBLE
+// BUBBLE
 public static void bubbleSort(int[] array) {
    int n = array.length;
    for (int i = 0; i < n; i++) {
@@ -303,7 +303,7 @@ public static void bubbleSort(int[] array) {
    }
 }
 
- // PESQUISA SEQUENCIAL
+// PESQUISA SEQUENCIAL
 public boolean pesquisaSequencial(int[] array, int valor)
 {
    for(int i = 0; i<array.length; i++){
@@ -313,7 +313,6 @@ public boolean pesquisaSequencial(int[] array, int valor)
    }
    return false;
 }
-
 
 // PESQUISA BINARIA
 public int pesquisaBinaria(int[] array, int valor, int esq, int dir)
@@ -331,151 +330,220 @@ public int pesquisaBinaria(int[] array, int valor, int esq, int dir)
    return -1;
 }
 
+// Lista 
+/* import java.util.Random;
 
-
-// Lista
-/* 
-import java.util.Random;
-
-public class Lista 
-{
-// ---------------------------------------- atributos
-
+public class Lista {
    protected int[] array;     // arranjo
    protected int   size;      // tamanho real
    protected int   capacity;  // capacidade total
-public Lista( ) 
-{
-   this(10); // capacidade padrao de 10
-} // end Lista ( );
+   public Lista( ){
+      this(10); // capacidade padrao de 10
+   } // end Lista ( );
 
-public Lista( int length ) 
-{
-   if( length > 0 )
-   {
-      this.capacity = length+4;
-      this.array = new int[this.capacity];
-      this.size = length;
-    } // end if
-} // end Lista ( )
+   public Lista( int length ){
 
-// ---------------------------------------- GETs / SETs
+      if( length > 0 ){
 
-public int getSize( ) 
-{
-   return ( this.size );
-} // end getSize ( )
-}
+            this.capacity = length+4;
+            this.array = new int[this.capacity];
+            this.size = length;
+      } // end if
+    } // end Lista ( )
 
-public int getCapacity( ) 
-   {
+    //GETs / SETs
+
+   public int getSize( ){
+         return ( this.size );
+    } // end getSize ( )
+    //}
+
+   public int getCapacity( ){
       return ( this.capacity );
     } // end getCapacity ( )
 
-   public void set( int index, int value )
-   {
+   public void set( int index, int value ){
       this.array[index] = value;
-    } // end set ( )
+   } // end set ( )
 
-   public int get( int index )
-   {
+   public int get( int index ){
       int value = 0;
       if( index >= 0 && index < size )
       {
-            value = this.array[index];
-        } // end if
+         value = this.array[index];
+      } // end if
       return ( value );
-    } // end get ( )
+   } // end get ( )
 
-    // ----------------------------------------  Outros Metodos
-   private void increaseCapacity( ) 
-   {
-        int newCapacity = capacity * 2; // Aumenta em 50%
+   //OUTROS METODOS
+   private void increaseCapacity( ){
+      int newCapacity = capacity * 2; // Aumenta em 50%
       int[] newArray = new int[newCapacity];
-        System.arraycopy(array, 0, newArray, 0, size); // Copia os elementos para o novo array
-        System.arraycopy(newArray, 0, array, 0, size); // Copia os elementos para o novo array
+      System.arraycopy(array, 0, newArray, 0, size); // Copia os elementos para o novo array
+      System.arraycopy(newArray, 0, array, 0, size); // Copia os elementos para o novo array
       array = newArray;
       capacity = newCapacity;
-    } // end increaseCapacity ( )
+   } // end increaseCapacity ( )
 
-   public void add( int value ) 
-   {
-      if( size >= capacity ) 
-      {
-            increaseCapacity( ); // Aumenta a capacidade se necessário
-        } // end if
+   public void add( int value ){
+      if( size >= capacity ){
+         increaseCapacity( ); // Aumenta a capacidade se necessário
+      } // end if
       array[size++] = value;
-    } // end add ( )
+   } // end add ( )
 
-   public void randValue( ) 
-   {
+   public void randValue( ){
       Random gerador = new Random( );
-      for( int x = 0; x < size; x = x + 1 )
-      {
-            array[x] = Math.abs( gerador.nextInt( ) % 50 );
-        } // end for
-    } // end randValue ( )
+      for( int x = 0; x < size; x = x + 1 ){
+         array[x] = Math.abs( gerador.nextInt( ) % 50 );
+      } // end for
+   } // end randValue ( )
 
-   public void printLista( )
-   {
+   public void printLista( ){
       System.out.print( "[ " );
-      for( int x = 0; x < size; x = x + 1 )
-      {
-            System.out.print( array[x] + " " );
-        } // end for
+      for( int x = 0; x < size; x = x + 1 ){
+         System.out.print( array[x] + " " );
+      } // end for
       System.out.println( "]" );
-    } // end printLista ( )
+   } // end printLista ( )
 
-*/
+   //REMOVER INICIO
+   public int RemoverInicio(){
+      int valor = 0;
+      if(size > 0){
+         valor = array[0];
+         for(int x = 1; x < size; x++){
+            array[x-1] = array[x];
+         }//end for
+         size--;
+      }//end if
+      return (valor);
+   }//end program
 
- //REMOVER INICIO
-public int RemoverInicio()
-{
-   int valor = 0;
-   if(size > 0){
-      valor = array[0];
-      for(int x = 1; x < size; x++){
-         array[x-1] = array[x];
+   //REMOVER POSIÇÃO
+   public int remover(int pos) throws Exception {
+      if (n == 0 || pos < 0 || pos >= n) {
+         throw new Exception("Erro ao remover!");
+      }//end if
+      int resp = array[pos];
+      n--;
+      for(int i = pos; i < n; i++){
+         array[i] = array[i+1];
       }//end for
-      size--;
-   }//end if
-   return (valor);
-}//end program
+      return resp;
+   }//end program
 
+   //REMOVER FIM
+   public int RemoverFim(){
+      int valor = 0;
+      if(size > 0){
+         valor = array[size-1];
+         size--;
+      }//end if
+      return (valor);
+   }//end program
 
- //REMOVER FIM
-public int RemoverFim()
-{
-   int valor = 0;
-   if(size > 0){
-      valor = array[size-1];
-      size--;
-   }//end if
-   return (valor);
-}//end program
+   // INSERIR INICIO
+   public void InserirInicio(int valor){
+      if (size < capacidade) {
+         for(int x = size-1; x>=0; x--){
+            array[x+1] = array[x];
+         }//end for
+         array[0] = valor;
+         size++;
+      }//end if
+   }//end program 
 
+   //INSERIR POSIÇÃO
+   public void inserir(int x, int pos) throws Exception {
+      if(n >= array.length || pos < 0 || pos > n){
+         throw new Exception("Erro ao inserir!");
+      }//end if
+      for(int i = n; i > pos; i--){
+         array[i] = array[i-1];
+      }//end for
+      array[pos] = x;
+      n++;
+   }//end program
 
- // INSERIR INICIO
-public void InserirInicio(int valor)
-{
-if (size < capacidade) {
-   for(int x = size-1; x>=0; x--){
-      array[x+1] = array[x];
-   }//end for
-   array[0] = valor;
-   size++;
-   }//end if
-}//end program 
+   //INSERIR FIM
+   public void InserirFim(int valor){
+      if (size < capacidade) {
+         array[size] = valor;
+         size++;
+      }else{
+         aumentarCapacidade();
+         size++;
+      }//end (if) else
+   }//end program
 
+   //MOSTRAR
+   public void mostrar (){
+      System.out.print("[ ");
+      for(int i = 0; i < n; i++){
+         System.out.print(array[i] + " ");
+      }//end for
+      System.out.println("]");
+   }//end program
 
- //INSERIR FIM
-public void InserirFim(int valor)
-{
-   if (size < capacidade) {
-      array[size] = valor;
-      size++;
-   }else{
-      aumentarCapacidade();
-      size++;
+}//end lista  */
+
+//Circular
+class Fila {
+   private int[] array;
+   private int primeiro; // Remove do indice "primeiro".
+   private int ultimo; // Insere no indice "ultimo".
+   public Fila () {
+      this(6);
+   }
+   public Fila (int tamanho){
+      array = new int[tamanho+1];
+      primeiro = ultimo = 0;
+   }
+
+   //INSERIR CIRCULAR
+   public void inserir(int x) throws Exception {
+      if (((ultimo + 1) % array.length) == primeiro) {
+         throw new Exception("Erro ao inserir!");
+      }//end if
+      array[ultimo] = x;
+      ultimo = (ultimo + 1) % array.length;
+   }//end program
+
+   //REMOVER CIRCULAR
+   public int remover() throws Exception {
+      if (primeiro == ultimo) {
+         throw new Exception("Erro ao remover!");
+      }//end if
+      int resp = array[primeiro];
+      primeiro = (primeiro + 1) % array.length;
+      return resp;
+   }//end program
+
+   //MOSTRAR CIRCULAR
+   public void mostrar (){
+      System.out.print("[ ");
+      for(int i = primeiro; i != ultimo; i = ((i + 1) % array.length)) {
+         System.out.print(array[i] + " ");
+      }//end for
+      System.out.println("]");
+   }//end program
+
+   public void mostrarRec(){
+      System.out.print("[ ");
+      mostrarRec(primeiro);
+      System.out.println("]");
+   }
+
+   public void mostrarRec(int i){
+      if(i != ultimo){
+         System.out.print(array[i] + " ");
+         mostrarRec((i + 1) % array.length);
+      }
+   }
+
+   //VAZIA
+   public boolean isVazia() {
+      return (primeiro == ultimo); 
    }
 }
