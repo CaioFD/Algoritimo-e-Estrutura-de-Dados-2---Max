@@ -9,8 +9,8 @@ public class Q7 {
     String resp = "", line;
 
     try {
-      url = new URL(endereco);
-      is = url.openStream();
+     // url = new URL(endereco);
+     // is = url.openStream();
       br = new BufferedReader(new InputStreamReader(is));
 
       while ((line = br.readLine()) != null) {

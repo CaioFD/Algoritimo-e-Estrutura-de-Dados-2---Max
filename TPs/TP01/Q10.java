@@ -1,6 +1,4 @@
 
-import java.util.Scanner;
-
 class Q10{
 //public static Scanner ler = new Scanner(System.in);
 public static boolean isPalindromo(String palavra){
