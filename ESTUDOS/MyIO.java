@@ -253,28 +253,22 @@ class MyIO {
 }
 
 
+ // função de ordenar INSERÇAO
 
-
-
-/* // função de ordenar INSERÇAO
-
-   private static void InsertionSort( String[] array )
-{
-   for( int x = 1; x < array.length; x++ ) 
-   {
-      String temp = array[x];
-      int y = x - 1;
-      while( (y >= 0) && (array[x].compareTo(temp) > 0) )
-      {
-         array[y + 1] = array[y];
-         y--;
+   private static void InsertionSort( String[] array ) {
+      for( int x = 1; x < array.length; x++ ) {
+         String temp = array[x];
+         int y = x - 1;
+         while( (y >= 0) && (array[x].compareTo(temp) > 0) ) {
+            array[y + 1] = array[y];
+            y--;
+         } 
+         array[y + 1] = temp;
       } 
-      array[y + 1] = temp;
    } 
-} 
-*/
 
-/* // função de ordenar SELEÇÃO
+
+ // função de ordenar SELEÇÃO
    private static void SelectionSort( String[] array )
    {
       for(int i = 0; i<(n-1); i++){
@@ -293,9 +287,9 @@ class MyIO {
       arr[i] = arr[j];
       arr[j] = temp;
    }
- */
 
-/* // função de ordenar BUBBLE
+
+ // função de ordenar BUBBLE
 public static void bubbleSort(int[] array) {
    int n = array.length;
    for (int i = 0; i < n; i++) {
@@ -308,9 +302,8 @@ public static void bubbleSort(int[] array) {
       }
    }
 }
-*/
 
-/* // PESQUISA SEQUENCIAL
+ // PESQUISA SEQUENCIAL
 public boolean pesquisaSequencial(int[] array, int valor)
 {
    for(int i = 0; i<array.length; i++){
@@ -320,9 +313,9 @@ public boolean pesquisaSequencial(int[] array, int valor)
    }
    return false;
 }
-*/
 
-/* // PESQUISA BINARIA
+
+// PESQUISA BINARIA
 public int pesquisaBinaria(int[] array, int valor, int esq, int dir)
 {
    int meio = (esq+dir)/2;
@@ -337,7 +330,7 @@ public int pesquisaBinaria(int[] array, int valor, int esq, int dir)
    }
    return -1;
 }
-*/
+
 
 
 // Lista
@@ -435,7 +428,7 @@ public int getCapacity( )
 
 */
 
-/* //REMOVER INICIO
+ //REMOVER INICIO
 public int RemoverInicio()
 {
    int valor = 0;
@@ -448,9 +441,9 @@ public int RemoverInicio()
    }//end if
    return (valor);
 }//end program
-*/
 
-/* //REMOVER FIM
+
+ //REMOVER FIM
 public int RemoverFim()
 {
    int valor = 0;
@@ -460,9 +453,9 @@ public int RemoverFim()
    }//end if
    return (valor);
 }//end program
-*/
 
-/* // INSERIR INICIO
+
+ // INSERIR INICIO
 public void InserirInicio(int valor)
 {
 if (size < capacidade) {
@@ -473,9 +466,9 @@ if (size < capacidade) {
    size++;
    }//end if
 }//end program 
-*/
 
-/* //INSERIR FIM
+
+ //INSERIR FIM
 public void InserirFim(int valor)
 {
    if (size < capacidade) {
@@ -486,4 +479,3 @@ public void InserirFim(int valor)
       size++;
    }
 }
-*/
