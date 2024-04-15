@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Personagem",
+      "request": "launch",
+      "mainClass": "Personagem",
+      "projectName": "Algoritimo e Estrutura de Dados 2 - Max_f8718334"
+    },
+    {
+      "type": "java",
       "name": "WarmpUpPokemon",
       "request": "launch",
       "mainClass": "WarmpUpPokemon",

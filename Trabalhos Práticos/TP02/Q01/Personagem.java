@@ -11,6 +11,10 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.format.DateTimeFormatter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.time.ZoneId;
 
 public class Personagem 
 {
@@ -379,11 +383,10 @@ public class Personagem
     }
 
 
-
-
     public void setDateOfBirth( String dateOfBirth ) 
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy");
+        //SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         LocalDate dob = LocalDate.parse( dateOfBirth, formatter );
         this.dateOfBirth = dob;
     }
